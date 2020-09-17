@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const { Router } = require("express");
-const router = Router();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.urlencoded());
+var cors = require("cors");
+app.use(cors());
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
